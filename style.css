@@ -2,17 +2,56 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     height: 100vh;
-    margin: 0;
+    margin: 1em;
     font-family: 'Open Sans', sans-serif;
+    background-image:url(https://images.unsplash.com/uploads/1411400493228e06a6315/ad711a20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 
 .wholebox {
-    background-color: rgba(245, 248, 250, 0.897);
+    background-color:#000000d0;
+    color: white;
     padding: 3em;
     border-radius: 30px;
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     margin: 1em;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+input.searchbar {
+    margin: 0.5em;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    height: 31px;
+    width: 230px;
+    background-color: #7c7c7c2b;
+    color: white;
+    width: 100%;
+    font-size: 120%;
+}
+
+button {
+    background-color: #7c7c7c2b;
+    color: white;
+    margin: 0.5em;
+    padding: 0.2em;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    height: 33px;
+    width: 40px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
