@@ -38,7 +38,7 @@ input.searchbar {
     width: 230px;
     background-color: #7c7c7c2b;
     color: white;
-    width: 100%;
+    width: 80%;
     font-size: 120%;
 }
 
@@ -55,3 +55,16 @@ button {
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
+
+button1 {
+    background-color: #7c7c7c2b;
+    color: white;
+    margin: 0.5em;
+    padding: 0.2em;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    height: 33px;
+    width: 40px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
