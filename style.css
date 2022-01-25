@@ -2,83 +2,182 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     margin: 1em;
     font-family: 'Open Sans', sans-serif;
     background-image:url(https://images.unsplash.com/uploads/1411400493228e06a6315/ad711a20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80) ;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
+    font-size: 110%;
 }
 
 .wholebox {
     background-color:#000000d0;
     color: white;
-    padding: 3em;
+    padding: 2em;
     border-radius: 30px;
     width: 100%;
-    max-width: 400px;
-    margin: 1em;
+    max-width: 420px;
+    margin: None;
+}
+
+button {
+    margin: none;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: none;
+    height: 44px;
+    width: 44px;
+    outline: none;
+    background: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+.inputbox {
+    display:none;
 }
 
 .search {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    
 }
 
-input.searchbar {
-    margin: 0.5em;
+.searchbar {
+    margin: 25px 0;
     border: none;
-    border-radius: 30px;
+    border-radius: 10px;
     outline: none;
-    height: 31px;
-    width: 230px;
     background-color: #7c7c7c2b;
     color: white;
-    width: 70%;
+    height : 55px;
+    max-width: 400px;
+    padding: 0 10px;
+    width: 100%;
+    font-family: inherit;
     font-size: 120%;
+    text-align: center;
 }
 
-button {
-    background-color: #7c7c7c2b;
-    color: white;
-    margin: 0.5em;
-    padding: 0.2em;
-    border: none;
-    outline: none;
-    border-radius: 30px;
-    height: 33px;
-    width: 40px;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
+.searchbar:is(:valid, :focus) {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.searchbutton {
-    background-color: #7c7c7c2b;
-    color: white;
-    margin: 0.5em;
-    padding: 0.2em;
-    border: none;
-    outline: none;
-    border-radius: 30px;
-    height: 33px;
-    width: 40px;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
+.seprator {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap; 
+}
+
+.seprator > span {
+    position: relative;
+    display: inline-block;
+}
+
+.seprator > span:before,
+.seprator > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 2000px;
+    height: 1px;
+    background: white;
+}
+
+.seprator > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.seprator > span:after {
+    left: 100%;
+    margin-left: 15px;
 }
 
 .getlocation {
-    margin: 0.5em;
+    margin: 25px 0;
     border: none;
-    border-radius: 30px;
-    outline: none;
-    height: 31px;
-    width: 230px;
+    border-radius: 10px;
+    outline: 1px;
+    outline-color: white;
     background-color: #7c7c7c2b;
     color: white;
+    height: 55px;
+    max-width: 420px;
     width: 100%;
-    font-size: 120%;
+    font-family: inherit;
+    font-size: 110%;
+    text-align: center;
 }
+
+.loadinginformation{
+    display: none;
+    margin: 5px 0;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: #7c7c7c2b;
+    color: white;
+    height : 42px;
+    max-width: 420px;
+    width: 100%;
+    padding-top: 13px;
+    font-family: inherit;
+    font-size: 120%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadinginformation.error{
+    display: block;
+    color: white;
+    background-color: #7c7c7c2b;
+    font-family:inherit;
+    content: "hello";
+    text-align: center;
+}
+
+.loadinginformation.processing{
+    display: block;
+    color: white;
+    background-color: #7c7c7c2b;
+    font-family:inherit;
+    content: "hello";
+    text-align: center;
+}
+
+.loadinginformation.error {
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97);
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+
+
+
