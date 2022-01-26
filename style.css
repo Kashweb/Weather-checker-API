@@ -178,6 +178,17 @@ button {
   }
 }
 
+weatherpart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+weatherpart img {
+    max-width: 130px;
+    height: 20vh;
+}
+
 
 
 
