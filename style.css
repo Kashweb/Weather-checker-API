@@ -178,16 +178,121 @@ button {
   }
 }
 
-weatherpart{
+.wholebox .weatherpart{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-weatherpart img {
+.weatherpart img {
     max-width: 130px;
-    height: 20vh;
+    height: 10vh;
+    padding-bottom: 10px;
 }
+
+.weatherpart .temp {
+    display: flex;
+    font-size: 65px;
+    font-weight: 600;
+}
+
+.weatherpart .minmax {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 30px;
+}
+
+.mintemp {
+    width: 50%;
+    float: left;
+    align-items: center;
+}
+
+.mintemp {
+    width: 50%;
+    float: right;
+    align-items: center;
+}
+
+.weather {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.location {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    align-items: flex-start;
+    padding-bottom: 40px;
+}
+
+.location i{
+    color: white;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding-top: 15px;
+    border-top: 1px solid white;
+}
+
+.windspeed {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+}
+
+.windspeed i{
+    font-size: 30px;
+}
+
+.humidity {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    border-left: 1px solid white;
+}
+
+.humidity i{
+    font-size: 30px;
+}
+
+.humiditydetails{
+    justify-content: center;
+    margin-left: 10px; 
+    font-size: 20px;
+}
+
+.winddetails {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.humidity p{
+    margin-top: -3px;
+    font-size: 20px;
+    font-weight: 800px;
+}
+
+.windspeed p{
+    margin-top: -3px;
+    font-size: 20px;
+    font-weight: 800px;
+}
+
+
 
 
 
