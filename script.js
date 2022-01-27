@@ -1,8 +1,10 @@
 let weather ={
     "api" = "74ee123ab6f6950bfd34ae4827a70492",
-    getweather: function(location) {
-        fetch("https://api.openweathermap.org/data/2.5/weather?q=Darwin&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492")
-
+    fetchweather: function(location) {
+        fetch("https://api.openweathermap.org/data/2.5/weather?q="
+        + city
+        + "&units=metric&appid="\
+        +this.api
         .then(responce => {
             return responce,json();
         }) .then(function(responce) {
