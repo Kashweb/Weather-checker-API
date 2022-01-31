@@ -11,6 +11,17 @@ let weather = {
       .then((data) => console.log(data));
     },
     displayWeather: function(data){
-
-    }
+      const {temp, temp_min, temp_max, humidity} = data.main;
+      const {id, description} = data.weather[0];
+      const {speed} = data.wind;
+      const {city} = data.name;
+      const {country} = data.sys.country;
+      weatherpart.queryselector(".temp .number").innerText = Math.floor(temp);
+      weatherpart.queryselector(".mintemp .minnumber").innerText = Math.floor(temp_min);
+      weatherpart.queryselector(".maxtemp .maxnumber").innerText = Math.floor(temp_max);
+      weatherpart.queryselector(".weather").innerText = description;
+      weatherpart.queryselector(".location span").innerText = ${city}, ${country};
+      weatherpart.queryselector(".winddetials span").innerText = Math.floor(speed);
+      weatherpart.queryselector(".humiditydetails span").innerText = Math.floor(humidity);
+    } 
   };
