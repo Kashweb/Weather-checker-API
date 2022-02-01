@@ -22,6 +22,17 @@ let weather = {
       weatherpart.queryselector(".weather").innerText = description;
       weatherpart.queryselector(".location span").innerText = ${city}, ${country};
       weatherpart.queryselector(".winddetials span").innerText = Math.floor(speed);
-      weatherpart.queryselector(".humiditydetails span").innerText = Math.floor(humidity);
+      weatherpart.queryselector(".humiditydetails span").innerText = Math.floor{humidity}%;
     } 
   };
+
+  document.queryselector("searchbar").addEventListener("keyup", e => {
+    if (e.key =="Enter" && serachbar.value != ""){
+      weather.fetchWeather(searchbar.value);
+    }
+  } )
+
+
+
+
+  
