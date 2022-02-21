@@ -1,36 +1,16 @@
-var button = document.querySelector(".getlocation");
-var input = document.querySelector(".searchbar");
-var ul = document.querySelector("ul");
+const wrapper = document.querySelector(".wholebox");
+inputPart = document.querySelector(".inputbox");
+loadinginformation = document.querySelector(".loadinginformation");
+inputField = document.querySelector(".searchbar");
+locationBtn = document.querySelector(".getlocation"); 
+weatherPart = document.querySelector(".weatherpart");
+wIcon = document.querySelector("img");
+arrowBack = document.querySelector("header button");
 
-function inputLength() {
-    return input.value.length;
-}
 
-function alertEmpty() {
-    if (inputLength() === 0) {
-        alert("Please Enter Your Item First");
+//functional Enter key
+inputField.addEventListener("keyup", e => {
+    if(e.key == "Enter" && inputField.value != ""){
+        console.log("hel")
     }
-}
-
-function creatListElement() {
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(input.value));
-    ul.appendChild(li);
-    input.value = "";
-}
-
-function addListAfterClick() {
-    if (inputLength() > 0) {
-        creatListElement();
-    } else(alertEmpty());
-}
-
-function addListAfterKeypress() {
-    if (inputLength() > 0 && event.keyCode === 13) {
-        creatListElement();
-    } else(alertEmpty());
-}
-
-button.addEventListener("click", addListAfterClick);
-
-input.addEventListener("keypress", addListAfterKeypress);
+})
