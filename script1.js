@@ -1,16 +1,35 @@
-const wrapper = document.querySelector(".wholebox");
-inputPart = document.querySelector(".inputbox");
+const wholeBox = document.querySelector(".wholebox");
+inputBox = document.querySelector(".inputbox");
 loadinginformation = document.querySelector(".loadinginformation");
-inputField = document.querySelector(".searchbar");
-locationBtn = document.querySelector(".getlocation"); 
+searchbar = document.querySelector(".searchbar");
+getLocation = document.querySelector(".getlocation"); 
 weatherPart = document.querySelector(".weatherpart");
-wIcon = document.querySelector("img");
-arrowBack = document.querySelector("header button");
+image = document.querySelector("img");
+headerButton = document.querySelector("header button");
 
 
 //functional Enter key
-inputField.addEventListener("keyup", e => {
-    if(e.key == "Enter" && inputField.value != ""){
+searchbar.addEventListener("keyup", e => {
+    if(e.key == "Enter" && searchbar.value != ""){
         console.log("hel")
     }
-})
+});
+
+
+    
+function fetchWeather(city){
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=city&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492")
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+    };
+
+function getGeoLocation(position){
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    fetch("https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492")
+}
+
+
+    
+
+
