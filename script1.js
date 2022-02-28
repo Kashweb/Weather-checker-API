@@ -11,7 +11,7 @@ headerButton = document.querySelector("header button");
 //functional Enter key
 searchbar.addEventListener("keyup", e => {
     if(e.key == "Enter" && searchbar.value != ""){
-        console.log("hel")
+        fetchWeather(searchbar.value)
     }
 });
 
@@ -21,7 +21,7 @@ getLocation.addEventListener("click", () => {
         alert("The Browswer does not support Geolocation...")
     }
     else{
-        navigator.geolocation.getCurrentPosition(getGeoLocation, error);
+        navigator.geolocation.getCurrentPosition(fetchGeoLocation, error);
     }
 })
 
@@ -33,7 +33,7 @@ function fetchWeather(city){
     };
 
 //fetchweather using Geolocation function
-function getGeoLocation(position){
+function fetchGeoLocation(position){
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     fetch("https://api.openweathermap.org/data/2.5/weather?latitude=latitude&longitude=longitude&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492")
@@ -46,11 +46,42 @@ function error(error){
     console.log("hello")
 };
 
-//Display weather on the HTML
+//Display weather on the HTML 
 function displayWeather(data){
+    if (data.Statuscode == "404"){
+        loadinginformation.classlist.replace();
+        loadinginformation.innerText = "{searchbar.value} is not a valid city...";
+    }
+    else {
+        const {name} = data.name;
+        const {country} = data.sys.country;
+        const {description, id} = data.weather[0];
+        const {temp, temp_min, temp_max, humidity} = data.main;
+        const {speed} = data.wind;
 
+        if(id == 800){
+            wIcon.src = "icons/clear.svg";
+        }
+        else if(id >= 200 && id <= 232){
+            wIcon.src = "icons/storm.svg";  
+        }
+        else if(id >= 600 && id <= 622){
+            wIcon.src = "icons/snow.svg";
+        }
+        else if(id >= 701 && id <= 781){
+            wIcon.src = "icons/haze.svg";
+        }
+        else if(id >= 801 && id <= 804){
+            wIcon.src = "icons/cloud.svg";
+        }
+        else if((id >= 500 && id <= 531) || (id >= 300 && id <= 321)){
+            wIcon.src = "icons/rain.svg";
+        }
+
+        weatherPart.querySelector("")
+
+    }
 }
-
 
 
     
