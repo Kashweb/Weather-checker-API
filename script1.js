@@ -34,7 +34,7 @@ function fetchWeather(city){
 function getGeoLocation(position){
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    fetch("https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492")
+    fetch("https://api.openweathermap.org/data/2.5/weather?latitude=latitude&longitude=longitude&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492")
     .then((response) => response.json())
     .then((data) => console.log(data));
 };
@@ -42,6 +42,7 @@ function getGeoLocation(position){
 function error(error){
     console.log("hello")
 };
+
 
 
 
