@@ -15,6 +15,7 @@ searchbar.addEventListener("keyup", e => {
     }
 });
 
+//functional Getlocation/Geolocation button
 getLocation.addEventListener("click", () => {
     if(!navigator.geolocation) {
         alert("The Browswer does not support Geolocation...")
@@ -24,13 +25,14 @@ getLocation.addEventListener("click", () => {
     }
 })
 
-
+//fetchweather using city name function
 function fetchWeather(city){
     fetch("https://api.openweathermap.org/data/2.5/weather?q=city&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492")
     .then((response) => response.json())
     .then((data) => console.log(data));
     };
 
+//fetchweather using Geolocation function
 function getGeoLocation(position){
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
@@ -39,10 +41,15 @@ function getGeoLocation(position){
     .then((data) => console.log(data));
 };
 
+//error when the Geolocation does not work
 function error(error){
     console.log("hello")
 };
 
+//Display weather on the HTML
+function displayWeather(data){
+
+}
 
 
 
