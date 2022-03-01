@@ -56,7 +56,6 @@ fetchWeather: function (city) {
  
 
 
-
 const wrapper = document.querySelector(".wholebox"),
 inputPart = document.querySelector(".inputbox"),
 infoTxt = inputPart.querySelector(".loading-information"),
@@ -97,3 +96,14 @@ inputField.addEventListener("keyup", event => {
 });
 
 locationBtn.addEventListener("click")
+
+
+inputField.addEventListener("keyup", event => {
+  if(event.key === 13 && inputField.value != " "){
+      console.log("hello")
+  }
+});
+
+
+
+https://api.openweathermap.org/data/2.5/weather?q=Darwin&appid=74ee123ab6f6950bfd34ae4827a70492
