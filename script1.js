@@ -29,7 +29,7 @@ getLocation.addEventListener("click", () => {
 function fetchWeather(city){
     fetch("https://api.openweathermap.org/data/2.5/weather?q=city&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492")
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => displayWeather(data));
     };
 
 //fetchweather using Geolocation function
@@ -38,7 +38,7 @@ function fetchGeoLocation(position){
     const longitude = position.coords.longitude;
     fetch("https://api.openweathermap.org/data/2.5/weather?latitude=latitude&longitude=longitude&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492")
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => displayWeather(data));
 };
 
 //error when the Geolocation does not work
@@ -60,25 +60,32 @@ function displayWeather(data){
         const {speed} = data.wind;
 
         if(id == 800){
-            wIcon.src = "icons/clear.svg";
+            image.src = "icons/clear.svg";
         }
         else if(id >= 200 && id <= 232){
-            wIcon.src = "icons/storm.svg";  
+            image.src = "icons/storm.svg";  
         }
         else if(id >= 600 && id <= 622){
-            wIcon.src = "icons/snow.svg";
+            image.src = "icons/snow.svg";
         }
         else if(id >= 701 && id <= 781){
-            wIcon.src = "icons/haze.svg";
+            image.src = "icons/haze.svg";
         }
         else if(id >= 801 && id <= 804){
-            wIcon.src = "icons/cloud.svg";
+            image.src = "icons/cloud.svg";
         }
         else if((id >= 500 && id <= 531) || (id >= 300 && id <= 321)){
-            wIcon.src = "icons/rain.svg";
+            image.src = "icons/rain.svg";
         }
 
-        weatherPart.querySelector("")
+        weatherPart.querySelector(".temp .number").innerText = Math.floor(temp);
+        weatherPart.querySelector(".mintemp .minnumber").innerText = Math.floor(temp_min);
+        weatherPart.querySelector(".maxtemp .maxnumber").innerText = Math.floor(temp_max);
+        weatherPart.querySelector(".weather").innerText = description;
+        weatherPart.querySelector(".location span").innerText = `${city}, ${country}`;
+        weatherPart.querySelector(".winddetails span").innerText = Math.floor();
+        weatherPart.querySelector(".humiditydetails span").innerText = Math.floor();
+        weatherPart.querySelector(".").innerText = Math.floor(); 
 
     }
 }
