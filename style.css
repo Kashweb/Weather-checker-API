@@ -278,6 +278,9 @@ header button {
     align-items: flex-start;
     padding-bottom: 40px;
 }
+.humidity span{
+    width: 100px;
+}
 
 .location i{
     color: white;

@@ -27,19 +27,21 @@ getLocation.addEventListener("click", () => {
 
 //fetchweather using city name function
 function fetchWeather(city){
-    fetch("https://api.openweathermap.org/data/2.5/weather?q=city&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492")
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492`)
     .then((response) => response.json())
-    .then((data) => displayWeather(data));
-    };
+    .then((data) => console.log(data));
+};
 
 //fetchweather using Geolocation function
 function fetchGeoLocation(position){
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    fetch("https://api.openweathermap.org/data/2.5/weather?latitude=latitude&longitude=longitude&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492")
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492`)
     .then((response) => response.json())
     .then((data) => displayWeather(data));
-};
+}
+
+
 
 //error when the Geolocation does not work
 function error(error){
@@ -53,11 +55,11 @@ function displayWeather(data){
         loadinginformation.innerText = "{searchbar.value} is not a valid city...";
     }
     else {
-        const {name} = data.name;
-        const {country} = data.sys.country;
+        const city = data.name;
+        const country = data.sys.country;
         const {description, id} = data.weather[0];
         const {temp, temp_min, temp_max, humidity} = data.main;
-        const {speed} = data.wind;
+        const speed = data.wind.speed;
 
         if(id == 800){
             image.src = "icons/clear.svg";
@@ -79,12 +81,12 @@ function displayWeather(data){
         }
 
         weatherPart.querySelector(".temp .number").innerText = Math.floor(temp);
-        weatherPart.querySelector(".mintemp .minnumber").innerText = Math.floor(temp_min);
-        weatherPart.querySelector(".maxtemp .maxnumber").innerText = Math.floor(temp_max);
+        weatherPart.querySelector(".minnumber").innerText = Math.floor(temp_min);
+        weatherPart.querySelector(".maxnumber").innerText = Math.floor(temp_max);
         weatherPart.querySelector(".weather").innerText = description;
         weatherPart.querySelector(".location span").innerText = `${city}, ${country}`;
-        weatherPart.querySelector(".winddetails span").innerText = Math.floor();
-        weatherPart.querySelector(".humiditydetails span").innerText = Math.floor();
+        weatherPart.querySelector(".windno").innerText = Math.floor(speed);
+        weatherPart.querySelector(".humiditydetails span").innerText = (humidity);
         weatherPart.querySelector(".").innerText = Math.floor(); 
 
     }
