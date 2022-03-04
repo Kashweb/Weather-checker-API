@@ -29,7 +29,7 @@ getLocation.addEventListener("click", () => {
 function fetchWeather(city){
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=74ee123ab6f6950bfd34ae4827a70492`)
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => displayWeather(data));
 };
 
 //fetchweather using Geolocation function
@@ -59,25 +59,25 @@ function displayWeather(data){
         const country = data.sys.country;
         const {description, id} = data.weather[0];
         const {temp, temp_min, temp_max, humidity} = data.main;
-        const speed = data.wind.speed;
+        const {speed} = data.wind;
 
         if(id == 800){
-            image.src = "icons/clear.svg";
+            image.src = "Images/clear.svg";
         }
         else if(id >= 200 && id <= 232){
-            image.src = "icons/storm.svg";  
+            image.src = "Images/storm.svg";  
         }
         else if(id >= 600 && id <= 622){
-            image.src = "icons/snow.svg";
+            image.src = "Images/snow.svg";
         }
         else if(id >= 701 && id <= 781){
-            image.src = "icons/haze.svg";
+            image.src = "Images/haze.svg";
         }
         else if(id >= 801 && id <= 804){
-            image.src = "icons/cloud.svg";
+            image.src = "Images/cloudy.svg";
         }
         else if((id >= 500 && id <= 531) || (id >= 300 && id <= 321)){
-            image.src = "icons/rain.svg";
+            image.src = "Images/rainy.svg";
         }
 
         weatherPart.querySelector(".temp .number").innerText = Math.floor(temp);
@@ -85,9 +85,8 @@ function displayWeather(data){
         weatherPart.querySelector(".maxnumber").innerText = Math.floor(temp_max);
         weatherPart.querySelector(".weather").innerText = description;
         weatherPart.querySelector(".location span").innerText = `${city}, ${country}`;
-        weatherPart.querySelector(".windno").innerText = Math.floor(speed);
-        weatherPart.querySelector(".humiditydetails span").innerText = (humidity);
-        weatherPart.querySelector(".").innerText = Math.floor(); 
+        weatherPart.querySelector(".windno").innerText = `${Math.floor(speed)}`;
+        weatherPart.querySelector(".humiditydetails span").innerText = humidity;
 
     }
 }
