@@ -45,7 +45,8 @@ function fetchGeoLocation(position){
 
 //error when the Geolocation does not work
 function error(error){
-    console.log("hello")
+    loadinginformation.innerHTML = error.message;
+    loadinginformation.classlist.add("some Error occoured while getting location");
 };
 
 //Display weather on the HTML 
@@ -87,10 +88,13 @@ function displayWeather(data){
         weatherPart.querySelector(".location span").innerText = `${city}, ${country}`;
         weatherPart.querySelector(".windno").innerText = `${Math.floor(speed)}`;
         weatherPart.querySelector(".humiditydetails span").innerText = humidity;
+        loadinginformation.classList.remove("processing", "error");
+        loadinginformation.innerText = "";
+        searchbar.value = "";
+        wholeBox.classList.add("active");
 
     }
 }
-
 
     
 
