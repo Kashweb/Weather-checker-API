@@ -38,7 +38,7 @@ body {
 }
 
 header button {
-    display: block;
+    display: none;
     font-size: 1em;
     margin: none;
     border-radius: 50%;
@@ -54,6 +54,7 @@ header button {
   }
 
 .active button {
+    display: block;
     font-size: 1em;
     margin: none;
     border-radius: 50%;

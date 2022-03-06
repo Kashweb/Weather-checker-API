@@ -50,13 +50,13 @@ function fetchGeoLocation(position){
 //error when the Geolocation does not work
 function error(error){
     loadinginformation.innerHTML = error.message;
-    loadinginformation.classlist.add("some Error occoured while getting location");
+    loadinginformation.classlist.add("error");
 };
 
 //Display weather on the HTML 
 function displayWeather(data){
     if (data.Statuscode == "404"){
-        loadinginformation.classlist.replace();
+        loadinginformation.classlist.add("error");
         loadinginformation.innerText = "{searchbar.value} is not a valid city...";
     }
     else {
