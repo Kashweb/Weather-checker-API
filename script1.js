@@ -15,6 +15,10 @@ searchbar.addEventListener("keyup", e => {
     }
 });
 
+headerButton.addEventListener("click", e =>{
+    wholeBox.classList.remove("active");
+})
+
 //functional Getlocation/Geolocation button
 getLocation.addEventListener("click", () => {
     if(!navigator.geolocation) {
@@ -94,7 +98,9 @@ function displayWeather(data){
         wholeBox.classList.add("active");
 
     }
+
 }
+
 
     
 
