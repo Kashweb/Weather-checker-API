@@ -2,11 +2,22 @@ const wholeBox = document.querySelector(".wholebox");
 inputBox = document.querySelector(".inputbox");
 loadinginformation = document.querySelector(".loadinginformation");
 searchbar = document.querySelector(".searchbar");
+matchList = document.querySelector("matchList");
 getLocation = document.querySelector(".getlocation"); 
 weatherPart = document.querySelector(".weatherpart");
 image = document.querySelector("img");
 headerButton = document.querySelector("header button");
 
+
+searchbar.addEventListener("input", e => {
+    searchMatchList(searchbar.value)
+})
+
+function searchMatchList() {
+    fetch("citiesdata.json")
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+}
 
 //functional Enter key
 searchbar.addEventListener("keyup", e => {
