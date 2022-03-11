@@ -13,11 +13,24 @@ searchbar.addEventListener("input", e => {
     searchMatchList(searchbar.value)
 })
 
-function searchMatchList() {
-    fetch("citiesdata.json")
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+const searchMatchList = async searchbarText => {
+    const res = await fetch("citiesdata.json");
+    const data = await res.json();
+
+    console.log(data)
 }
+
+// function searchMatchList() {
+//     fetch("citiesdata.json")
+//     .then((response) => response.json())
+//     .then(data => {
+//     let matches = data.filter(data => {
+//         const regex = new RegExp(`^${searchbarText}`, 'gi');
+//         return data.match(regex);
+//     });
+//     console.log(data);
+// }
+// };
 
 //functional Enter key
 searchbar.addEventListener("keyup", e => {
@@ -111,8 +124,3 @@ function displayWeather(data){
     }
 
 }
-
-
-    
-
-
