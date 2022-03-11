@@ -14,10 +14,14 @@ searchbar.addEventListener("input", e => {
 })
 
 const searchMatchList = async searchbarText => {
-    const res = await fetch("citiesdata.json");
+    const res = await fetch('../cities.json');
     const data = await res.json();
 
-    console.log(data)
+    let matches = data.filter(city => {
+        const regex = new RegExp(`^${searchbarText}`, 'gi');
+        return city.name.match(regex);
+    });
+    console.log(matches);
 }
 
 // function searchMatchList() {
