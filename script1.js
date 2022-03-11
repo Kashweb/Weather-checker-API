@@ -14,15 +14,34 @@ searchbar.addEventListener("input", e => {
 })
 
 const searchMatchList = async searchbarText => {
-    const res = await fetch('../cities.json');
+    const res = await fetch("cities.json");
     const data = await res.json();
 
     let matches = data.filter(city => {
         const regex = new RegExp(`^${searchbarText}`, 'gi');
         return city.name.match(regex);
     });
-    console.log(matches);
-}
+    if (searchbarText.length == 0){
+        matches == [];
+    }
+    outputHTML(matches.slice(0, 6))
+};
+
+const outputHTML = matches => {
+    if(matches.length > 0){
+        const html = matches.map(
+            match =>
+            `<div>
+                <h4>
+                    ${match.name}, ${match.country} 
+                </h4>
+            </div>`)
+
+    .join('');
+
+    document.getElementById("matchList").innerHTML = html;
+    }
+};
 
 // function searchMatchList() {
 //     fetch("citiesdata.json")
