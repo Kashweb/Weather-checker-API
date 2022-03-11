@@ -21,9 +21,10 @@ const searchMatchList = async searchbarText => {
         const regex = new RegExp(`^${searchbarText}`, 'gi');
         return city.name.match(regex);
     });
-    if (searchbarText.length == 0){
-        matches == [];
-    }
+    if (searchbarText.length === 0){
+        matches = [];
+        matchList.innerHTML = "";
+    } 
     outputHTML(matches.slice(0, 6))
 };
 
@@ -40,6 +41,10 @@ const outputHTML = matches => {
     .join('');
 
     document.getElementById("matchList").innerHTML = html;
+
+    html.addEventListener("click", e =>{
+        `${match.name}`.value = getElementById("matchList")[0].value;
+    })
     }
 };
 
