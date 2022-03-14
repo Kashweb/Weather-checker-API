@@ -13,40 +13,43 @@ searchbar.addEventListener("input", e => {
     searchMatchList(searchbar.value)
 })
 
-const searchMatchList = async searchbarText => {
-    const res = await fetch("cities.json");
-    const data = await res.json();
 
-    let matches = data.filter(city => {
-        const regex = new RegExp(`^${searchbarText}`, 'gi');
-        return city.name.match(regex);
-    });
-    if (searchbarText.length === 0){
-        matches = [];
-        matchList.innerHTML = "";
-    } 
-    outputHTML(matches.slice(0, 6))
-};
+// This part is just for record purposes, was trying something new but did not work very well
+// const searchMatchList = async searchbarText => {
+//     const res = await fetch("cities.json");
+//     const data = await res.json();
 
-const outputHTML = matches => {
-    if(matches.length > 0){
-        const html = matches.map(
-            match =>
-            `<div>
-                <h4>
-                    ${match.name}, ${match.country} 
-                </h4>
-            </div>`)
+//     let matches = data.filter(city => {
+//         const regex = new RegExp(`^${searchbarText}`, 'gi');
+//         return city.name.match(regex);
+//     });
+//     if (searchbarText.length == 0){
+//         matches = []
+//         matchList.innerHTML = "";
+//     }; 
+//     outputHTML(matches.slice(0, 6))
+// };
 
-    .join('');
+// const outputHTML = matches => {
+//     if(matches.length > 0){
+//         const html = matches.map(
+//             match =>
+//             `<div>
+//                 <h4>
+//                     ${match.name}, ${match.country} 
+//                 </h4>
+//             </div>`)
 
-    document.getElementById("matchList").innerHTML = html;
+//     .join('');
 
-    html.addEventListener("click", e =>{
-        `${match.name}`.value = getElementById("matchList")[0].value;
-    })
-    }
-};
+//     document.getElementById("matchList").innerHTML = html;
+    
+//     matchList.addEventListener("click", e =>{
+//         searchbar.value = this.getElementById(html)
+//     })
+
+//     }
+// };
 
 // function searchMatchList() {
 //     fetch("citiesdata.json")
