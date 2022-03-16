@@ -100,14 +100,13 @@ header button {
 }
 
 
-#searchbar:is(:valid, :focus) {
+searchbar:is(:valid, :focus) {
     outline: 0.2px solid rgba(255, 255, 255, 0.5);
 }
 
 .autocomplete {
     display: block;
     text-align: center;
-    font-size: 120%;
     font-family: inherit;
     color: white;
 }
