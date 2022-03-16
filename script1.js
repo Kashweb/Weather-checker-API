@@ -3,7 +3,7 @@ var cities = ["Afghanistan","Herat","Kabul","Kandahar","Molah","Rana","Shar","Sh
 const wholeBox = document.querySelector(".wholebox");
 inputBox = document.querySelector(".inputbox");
 loadinginformation = document.querySelector(".loadinginformation");
-searchbar = document.querySelector(".searchbar");
+searchbar = document.querySelector("#searchbar");
 getLocation = document.querySelector(".getlocation"); 
 weatherPart = document.querySelector(".weatherpart");
 image = document.querySelector("img");
@@ -11,7 +11,7 @@ headerButton = document.querySelector("header button");
 
 function autocomplete(inp, arr, limit) {
     var currentFocus;      
-    limit = limit || 3;      
+    limit = limit || 5;      
 
     inp.addEventListener("input", function(e) {
       var a, b, i, val = this.value;
@@ -96,7 +96,7 @@ function autocomplete(inp, arr, limit) {
 
 
 //functional Enter key
-searchbar.addEventListener("keyup", function(e) {
+searchbar.addEventListener("keyup", e => {
     if(e.key == "Enter" && searchbar.value != ""){
         fetchWeather(searchbar.value)
     }
