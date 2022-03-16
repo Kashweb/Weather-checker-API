@@ -99,15 +99,26 @@ header button {
     text-align: center;
 }
 
-#matchList {
-    display: block;
-    text-align: center;
-    justify-content: center;
+
+#searchbar:is(:valid, :focus) {
+    outline: 0.2px solid rgba(255, 255, 255, 0.5);
 }
 
-.searchbar:is(:valid, :focus) {
-    outline: 1px solid rgba(255, 255, 255, 0.5);
+.autocomplete {
+    display: block;
+    text-align: center;
+    font-size: 120%;
+    font-family: inherit;
+    color: white;
 }
+.autocomplete-items div{
+    padding: 6px;
+    cursor: pointer;
+}
+.autocomplete-items div:hover{
+    background-color: black;
+}
+
 
 .seprator {
     display: block;
