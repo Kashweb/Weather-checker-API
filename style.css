@@ -83,7 +83,7 @@ header button {
     justify-content: center;
 }
 
-.searchbar {
+#searchbar {
     margin: 25px 0;
     border: none;
     border-radius: 10px;
