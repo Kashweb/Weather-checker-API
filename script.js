@@ -1,3 +1,5 @@
+// This is just a practice File. please ignore this and look the the script1.js cheers
+
 let weather = {
 apiKey: "74ee123ab6f6950bfd34ae4827a70492",
 
@@ -38,15 +40,15 @@ fetchWeather: function (city) {
   displayWeather: function(data){
     const {temp, temp_min, temp_max, humidity} = data.main;
     const {id, description} = data.weather[0];
-    const {speed} = data.wind;
+    const {speed} = data.wind.speed;
     const {city} = data.name;
     const {country} = data.sys.country;
     weatherpart.queryselector(".temp .number").innerText = Math.floor(temp);
-    weatherpart.queryselector(".mintemp .minnumber").innerText = Math.floor(temp_min);
-    weatherpart.queryselector(".maxtemp .maxnumber").innerText = Math.floor(temp_max);
+    weatherpart.queryselector(".minnumber").innerText = Math.floor(temp_min);
+    weatherpart.queryselector(".maxnumber").innerText = Math.floor(temp_max);
     weatherpart.queryselector(".weather").innerText = description;
-    weatherpart.queryselector(".location span").innerText = "${city}, ${country}";
-    weatherpart.queryselector(".winddetials span").innerText = Math.floor(speed);
+    weatherpart.queryselector(".location span").innerText = `${city}, ${country}`;
+    weatherpart.queryselector(".winddetials .windno").innerText = Math.floor(speed);
     weatherpart.queryselector(".humiditydetails span").innerText = "{humidity}%";
   } 
 };
@@ -107,3 +109,52 @@ inputField.addEventListener("keyup", event => {
 
 
 https://api.openweathermap.org/data/2.5/weather?q=Darwin&appid=74ee123ab6f6950bfd34ae4827a70492
+
+
+// // const searchMatchList = async searchbarText => {
+// //     const res = await fetch("cities.json");
+// //     const data = await res.json();
+
+// //     let matches = data.filter(city => {
+// //         const regex = new RegExp(`^${searchbarText}`, 'gi');
+// //         return city.name.match(regex);
+// //     });
+// //     if (searchbarText.length == 0){
+// //         matches = []
+// //         matchList.innerHTML = "";
+// //     }; 
+// //     outputHTML(matches.slice(0, 6))
+// // };
+
+// // const outputHTML = matches => {
+// //     if(matches.length > 0){
+// //         const html = matches.map(
+// //             match =>
+// //             `<div>
+// //                 <h4>
+// //                     ${match.name}, ${match.country} 
+// //                 </h4>
+// //             </div>`)
+
+// //     .join('');
+
+// //     document.getElementById("matchList").innerHTML = html;
+    
+// //     matchList.addEventListener("click", e =>{
+// //         searchbar.value = getElementById(html);
+// //     })
+
+// //     }
+// // };
+
+// // function searchMatchList() {
+// //     fetch("citiesdata.json")
+// //     .then((response) => response.json())
+// //     .then(data => {
+// //     let matches = data.filter(data => {
+// //         const regex = new RegExp(`^${searchbarText}`, 'gi');
+// //         return data.match(regex);
+// //     });
+// //     console.log(data);
+// // }
+// // };
