@@ -20,8 +20,11 @@ body {
 }
 
 .homepage {
+    position: relative;
+    z-index: -1;
     width: 100%;
-    margin-top: 70px;
+    height: 100%;
+    margin: 70px 0px 70px;
 }
 
 .card {
