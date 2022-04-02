@@ -15,8 +15,12 @@ body {
     top: 0;
     overflow: hidden;
 }
-.github {
+.headericon {
     color: white;
+}
+
+.headericon:hover{
+    color: black;
 }
 
 .homepage {
@@ -36,6 +40,8 @@ body {
     width: 75%;
     padding: 3px 0px 3px;
 }
+
+
 
 .card h2{
     color: white;
@@ -71,12 +77,17 @@ a:link{
     width: 100%;
     align-items: center;
     text-align: center;
-    
 }
-.navbar-bottom span {
+
+.navbar-bottom a {
     color: white;
     padding-bottom: -10px;
 }
+
+.navbar-bottom a:hover{
+    color: black;
+}
+
 .navbar-bottom p{
     color: white;
     margin: 3px;
