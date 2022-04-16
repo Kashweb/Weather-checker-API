@@ -5,7 +5,7 @@ body {
     height: 80vh;
     margin: 1em;
     font-family: 'Open Sans', sans-serif;
-    font-size: 110%;
+    font-size: 100%;
 }
 
 .wholebox {
@@ -16,6 +16,7 @@ body {
     width: 100%;
     max-width: 420px;
     margin-top: 100px;
+    margin-bottom: 20px;
 }
 
 .wholebox header span{
@@ -34,21 +35,9 @@ body {
 
 header button {
     display: none;
-    font-size: 1em;
-    margin: none;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    border: none;
-    height: 44px;
-    width: 44px;
-    outline: none;
-    background: #7c7c7c2b;
-    color: white;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
   }
 
-.active button {
+.active header button {
     display: block;
     font-size: 1em;
     margin: none;
@@ -65,7 +54,7 @@ header button {
 }
 
 .inputbox {
-    display:;
+    display:block;
 }
 
 .active .inputbox{
@@ -249,7 +238,7 @@ searchbar:is(:valid, :focus) {
 
 .weatherpart .temp {
     display: flex;
-    font-size: 65px;
+    font-size: 55px;
     font-weight: 600;
 }
 
@@ -259,7 +248,7 @@ searchbar:is(:valid, :focus) {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
 }
 
 .mintemp {
@@ -278,7 +267,7 @@ searchbar:is(:valid, :focus) {
     font-size: 30px;
     width: 100%;
     text-align: center;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 
 .location {
@@ -286,7 +275,7 @@ searchbar:is(:valid, :focus) {
     width: 100%;
     text-align: center;
     align-items: flex-start;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 .humidity span{
     width: 100px;

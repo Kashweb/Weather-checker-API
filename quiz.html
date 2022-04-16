@@ -2,13 +2,45 @@
 <html lang="en">
 <head>
     <div id="headsection"></div>
+    <link rel="stylesheet" href="CSS/quiz.css">
 </head>
 <body>
     <header class="topnavbar"></header> <!-- a Tag to import Html file using Jquery -->
-    
+    <section class="quizbox">
+        <div class="startsection">
+        <button class="startbutton">Start<br></button>
+        <P>You will get 10 seconds per question</P>
+        </div>
+        <div class="activeinfo">
+            <div class="time">
+                <div>Time Remaining :
+                    <span class="timeseconds">10</span> 
+                </div>
+            </div>
+            <div class="question">
+                <p><span>This is a question?</span></p>
+            </div>
+            <div class="options">
+                <button class="option">Option 1</button>
+                <button class="option">Option 2</button>
+            </div>
+            <div class="options">
+                <button class="option">Option 3</button>
+                <button class="option">Option 4</button>
+            </div>
+            <div class="Bottombuttons">
+                <button class="buttonprev">Prev</button>
+                <button class="option" style="background-color:blue">Submit</button>
+                <button class="buttonnext">Next</button>
+            </div>
+        </div>
+    </section>
 
     <div class="bottomnavbar"></div> <!-- a Tag to import Html file using Jquery -->
     <script src="//code.jquery.com/jquery.min.js"></script> <!-- a Tag to import Html file using Jquery -->
     <script src="JavaScript/navigation.js"></script>
+    <script src="JavaScript/quizscript.js"></script>
 </body>
 </html>
+
+

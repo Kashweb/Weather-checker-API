@@ -1,0 +1,88 @@
+.startsection {
+    display: none;
+}
+.startbutton{
+    background-color: blue;
+    padding: 15px 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 300%;
+    font-weight: bold;
+    margin: 50px 0px 50px;
+
+}
+.startsection p{
+    padding-bottom: 50px;
+}
+
+.activeinfo {
+    display: block;
+}
+
+.quizbox{
+    background-color: black;
+    width: 60%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 120px;
+    border-radius: 18px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.time{
+    padding-top: 15px;
+    display: flex;
+    justify-content:flex-end;
+    font-weight: bold;
+}
+.timeseconds{
+    margin: 0px 10px 0px 10px;
+    border: 0.2px solid;
+    padding: 5px;
+    border-radius: 27px;
+}
+
+.question {
+    font-size: 120%;
+    font-weight: bold;
+    text-align: center;
+    margin: 25px 1px 25px;
+    padding: 20px 0px 20px;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.option {
+    background-color: rgba(14, 195, 14, 0.782);
+    margin: 0px 5px 15px;
+    padding: 25px 50px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.option:hover {
+    background-color: rgba(0, 128, 0, 0.679);
+    color: white;
+}
+
+.Bottombuttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buttonprev, .buttonnext{
+    display: none;
+    background-color: blue;
+    margin: 0px 5px 15px;
+    padding: 15px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
