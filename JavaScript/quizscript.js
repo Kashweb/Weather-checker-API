@@ -1,11 +1,11 @@
 const startButton = document.querySelector(".startbutton");
 activeInfo = document.querySelector(".activeinfo");
+quizBox = document.querySelector(".quizbox");
 
 startButton.addEventListener("click", e =>{
     hel()
 });
 
 function hel(){
-    activeInfo.classList.remove("activeInfo")
-    alert("hello")
-}
+    quizBox.classList.add("active");
+};
