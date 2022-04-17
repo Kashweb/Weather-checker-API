@@ -67,26 +67,26 @@
     font-size: 120%;
     font-weight: bold;
     text-align: center;
-    margin: 25px 1px 25px;
+    margin: 25px 1px 15px 1px;
     padding: 20px 0px 20px;
 }
 
 .options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: block;
 }
 
-.option {
+.option{
     background-color: rgba(14, 195, 14, 0.782);
     margin: 0px 5px 15px;
-    max-width: 175px;
-    min-width: 175px;
-    max-height: 98px;
-    min-height: 98px;
-    padding: 25px 50px;
+    width: 80%;
+    padding: 15px 50px;
     text-align: center;
     border-radius: 10px;
+}
+
+.submitbutton{
+    font-weight: bold;
+    font-size: 120%;
 }
 
 .option:hover {
@@ -98,13 +98,30 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 10px;
+}
+
+.submitbutton{
+    margin: 0px 5px 15px;
+    max-width: 175px;
+    min-width: 175px;
+    max-height: 98px;
+    min-height: 98px;
+    padding: 25px 50px;
+    text-align: center;
+    border-radius: 10px;
 }
 
 .buttonprev, .buttonnext{
     display: none;
     background-color: blue;
     margin: 0px 5px 15px;
+    align-items: center;
     padding: 15px 20px;
     text-align: center;
     border-radius: 10px;
+}
+
+.hide{
+    display: flex;
 }

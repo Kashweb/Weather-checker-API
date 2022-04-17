@@ -52,7 +52,7 @@ let questions = [
     options: [
       "Hygrometer",
       "Thermometer",
-      "eXTra Multi-Program Language",
+      "Barometer",
       "Hydrometer"
     ]
   },

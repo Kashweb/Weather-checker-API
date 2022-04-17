@@ -1,5 +1,9 @@
 
 // selecting all the HTML elements. 
+let currentQuestion = 0;
+let currentScore = 0;
+
+
 const startButton = document.querySelector(".startbutton");
 activeInfo = document.querySelector(".activeinfo");
 quizBox = document.querySelector(".quizbox");
@@ -8,25 +12,52 @@ Question = document.querySelector(".question span");
 // Options1 = document.querySelector(".option");
 // Options2 = document.querySelector(".option");
 Options = document.querySelector(".options");
+submitButton = document.querySelector(".submitbutton");
+prevButton = document.querySelector(".buttonprev");
+nextButton = document.querySelector(".buttonnext");
 
 
 
 startButton.addEventListener("click", e =>{
     quizBox.classList.add("active");
-    showQuestions(0);
+    showQuestions(currentQuestion);
 });
 
-let currentQuestion = 0;
 
-function showQuestions() {
-    Question.innerHTML = questions[currentQuestion].question;
+function showQuestions(currentQuestion) {
+    Question.innerHTML = questions[currentQuestion].numb + ": " + " " +questions[currentQuestion].question;
 
 let OptionList = '<button class="option">'+ questions[currentQuestion].options[0] +'</button>'
                 + '<button class="option">'+ questions[currentQuestion].options[1] +'</button>'
                 + '<button class="option">'+ questions[currentQuestion].options[2] +'</button>'
                 + '<button class="option">'+ questions[currentQuestion].options[3] +'</button>'
             
-    Options.innerHTML = OptionList; 
+    Options.innerHTML = OptionList;
+    nextbutton();
 }
+
+submitButton.addEventListener("click", e =>{
+    showQuestions(currentQuestion++);
+    nextbutton();
+});
+
+nextButton.addEventListener("click", e =>{
+    showQuestions(currentQuestion++);
+    nextbutton();
+});
+
+prevButton.addEventListener("click", e =>{
+    showQuestions(currentQuestion--);
+    if(currentQuestion == 0){
+        prevButton.classList.add("hide");
+    }
+});
+
+function nextbutton(){
+    if(currentQuestion == questions.length){
+        nextButton.classList.remove("hide");
+    }else{nextButton.classList.add("hide");}
+}
+
 
 
