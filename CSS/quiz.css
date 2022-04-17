@@ -38,7 +38,7 @@
 
 .quizbox{
     background-color: black;
-    width: 50%;
+    width: 40%;
     min-width: 375px;
     margin: auto;
     margin-top: 100px;
@@ -80,6 +80,10 @@
 .option {
     background-color: rgba(14, 195, 14, 0.782);
     margin: 0px 5px 15px;
+    max-width: 175px;
+    min-width: 175px;
+    max-height: 98px;
+    min-height: 98px;
     padding: 25px 50px;
     text-align: center;
     border-radius: 10px;
