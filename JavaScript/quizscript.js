@@ -34,6 +34,7 @@ let OptionList = '<button class="option">'+ questions[currentQuestion].options[0
             
     Options.innerHTML = OptionList;
     nextbutton();
+    prevbutton();
 }
 
 submitButton.addEventListener("click", e =>{
@@ -44,19 +45,25 @@ submitButton.addEventListener("click", e =>{
 nextButton.addEventListener("click", e =>{
     showQuestions(currentQuestion++);
     nextbutton();
+    showQuestions(currentQuestion);
 });
 
 prevButton.addEventListener("click", e =>{
     showQuestions(currentQuestion--);
-    if(currentQuestion == 0){
-        prevButton.classList.add("hide");
-    }
+    prevbutton();
+    showQuestions(currentQuestion);
 });
 
 function nextbutton(){
     if(currentQuestion == questions.length){
         nextButton.classList.remove("hide");
     }else{nextButton.classList.add("hide");}
+}
+
+function prevbutton(){
+    if(currentQuestion >= 1){
+        prevButton.classList.add("hide");
+    }else{prevButton.classList.remove("hide");}
 }
 
 
