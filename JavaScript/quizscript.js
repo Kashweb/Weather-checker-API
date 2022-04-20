@@ -15,6 +15,8 @@ Options = document.querySelector(".options");
 submitButton = document.querySelector(".submitbutton");
 prevButton = document.querySelector(".buttonprev");
 nextButton = document.querySelector(".buttonnext");
+resultsBox = document.querySelector(".results");
+restartButton = document.querySelector(".results button");
 
 
 
@@ -66,6 +68,13 @@ function prevbutton(){
         prevButton.classList.add("hide");
     }else{prevButton.classList.remove("hide");}
 }
+
+restartButton.addEventListener("click", e =>{
+    quizBox.classList.add("active");
+    showQuestions(currentQuestion);
+    resultsBox.classList.add("resultshide");
+
+});
 
 
 

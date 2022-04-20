@@ -1,5 +1,5 @@
 .startsection {
-    display: block;
+    display: none;
 }
 
 .active .startsection{
@@ -124,4 +124,37 @@
 
 .hide{
     display: flex;
+}
+
+.results{
+    padding: 4%;
+    display: block;
+    font-size: 180%;
+    font-weight: bold;
+}
+
+.resultshide{
+    display: none;
+}
+
+.resultmessage{
+    font-family: 'Square Peg', cursive;
+    font-size: 175%;
+    font-weight: lighter;
+    padding-bottom: 20px;
+    
+}
+
+.score{
+    padding-bottom: 40px;
+}
+
+.results button{
+    background-color: black;
+    color: white;
+    border: none;
+    padding-bottom: 5px;
+}
+.results p{
+    font-size: 50%;
 }
