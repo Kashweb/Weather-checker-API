@@ -18,7 +18,7 @@ submitButton = document.querySelector(".submitbutton");
 prevButton = document.querySelector(".buttonprev");
 nextButton = document.querySelector(".buttonnext");
 resultsBox = document.querySelector(".resultshide");
-restartButton = document.querySelector(".results button");
+restartButton = document.querySelector(".restartbutton");
 score = document.querySelector(".score span");
 
 
@@ -33,19 +33,36 @@ startButton.addEventListener("click", e =>{
 function showQuestions(currentQuestion) {
     Question.innerHTML = questions[currentQuestion].numb + ": " + " " +questions[currentQuestion].question;
 
-let options = '<button class="option">'+ questions[currentQuestion].options[0] +'</button>'
+let optionstag = '<button class="option">'+ questions[currentQuestion].options[0] +'</button>'
                 + '<button class="option">'+ questions[currentQuestion].options[1] +'</button>'
                 + '<button class="option">'+ questions[currentQuestion].options[2] +'</button>'
                 + '<button class="option">'+ questions[currentQuestion].options[3] +'</button>'
             
-    Options.innerHTML = options;
+    Options.innerHTML = optionstag;
     nextbutton();
     prevbutton();
+
+    const selectoption = document.querySelectorAll(".option");
+    for (i = 0; i < selectoption.length; i++){
+    	selectoption[i].setAttribute("onclick", "optionSelected()");
+    };
 };
 
-function correctAnswer(currentQuestion){
-
+function optionSelected(){
+    alert(option[i].innerHTML);
 };
+
+
+// const Option = options.querySelectorAll(".option");
+// for (i = 0; i < option.length; i++){
+//     Option[i].setAttribute("onclick", "correctAnswer")
+// };
+
+// function correctAnswer(currentQuestion){
+//     let correctAns = questions[currentQuestion].answer;
+    
+
+// };
 
 
 
@@ -86,7 +103,7 @@ function prevbutton(){
 }
 
 restartButton.addEventListener("click", e =>{
+    resultsBox.classList.remove("results");
     quizBox.classList.add("active");
-    showQuestions(currentQuestion);
-    resultsBox.classList.add("resultshide");
+    showQuestions(0);
 });
