@@ -5,6 +5,7 @@ let currentScore = 0;
 let score = 0;
 
 
+
 const startButton = document.querySelector(".startbutton");
 startSection = document.querySelector(".startsection");
 activeInfo = document.querySelector(".activeinfo");
@@ -44,25 +45,40 @@ let optionstag = '<button class="option">'+ questions[currentQuestion].options[0
 
     const selectoption = document.querySelectorAll(".option");
     for (i = 0; i < selectoption.length; i++){
-    	selectoption[i].setAttribute("onclick", "optionSelected()");
+    	selectoption[i].setAttribute("onclick", "optionSelected(this)");
     };
 };
 
-function optionSelected(){
-    alert(option[i].innerHTML);
+function optionSelected(answer){
+    let userAns = answer.textContent;
+    let correctAns = questions[currentQuestion].answer;
+    alert(answer.textContent);
+}
+
+    // submitButton.addEventListener("click", e =>{
+    //     if(userAns == correctAns){
+    //         alert("correct")
+    //     }else{
+    //         alert("not correct")
+    //     };
+    // });
+
+let totalSeconds = 10;
+const timer = setInterval(startTimer, 1000);
+
+function startTimer(){
+    if(totalSeconds < 0){
+    	timeSeconds.innerHTML = "0";
+        clearInterval(timer);
+        showQuestions(currentQuestion++);
+        nextbutton();
+        showQuestions(currentQuestion);
+    }else{
+    	timeSeconds.innerHTML = totalSeconds;
+    }
+    totalSeconds--;
 };
 
-
-// const Option = options.querySelectorAll(".option");
-// for (i = 0; i < option.length; i++){
-//     Option[i].setAttribute("onclick", "correctAnswer")
-// };
-
-// function correctAnswer(currentQuestion){
-//     let correctAns = questions[currentQuestion].answer;
-    
-
-// };
 
 
 
@@ -71,6 +87,7 @@ submitButton.addEventListener("click", e =>{
         showQuestions(currentQuestion++);
         nextbutton();
         showQuestions(currentQuestion);
+        startTimer();
     }else {
         startSection.classList.add("actives");
         quizBox.classList.remove("active");
@@ -79,15 +96,18 @@ submitButton.addEventListener("click", e =>{
 });
 
 nextButton.addEventListener("click", e =>{
+    startTimer();
     showQuestions(currentQuestion++);
     nextbutton();
     showQuestions(currentQuestion);
+    
 });
 
 prevButton.addEventListener("click", e =>{
     showQuestions(currentQuestion--);
     prevbutton();
     showQuestions(currentQuestion);
+    startTimer();
 });
 
 function nextbutton(){
@@ -105,5 +125,6 @@ function prevbutton(){
 restartButton.addEventListener("click", e =>{
     resultsBox.classList.remove("results");
     quizBox.classList.add("active");
-    showQuestions(0);
+    currentQuestion = 0;
+    showQuestions(currentQuestion);
 });
