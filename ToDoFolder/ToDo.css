@@ -1,0 +1,140 @@
+.heading{
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.addbuttonsection{
+    padding: 50px 220px 0px;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+.dbentry{
+    background-color: rgb(43, 29, 29);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+
+.visible{
+    display: block;
+}
+
+.cityname{
+    justify-content: center;
+    text-align: center;
+    margin: 100px 0px 30px;
+}
+
+.cityname h6{
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+} 
+
+.content{
+    margin: auto;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    margin: 30px;
+}
+
+.addsitehere{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.addsitehere div{
+    margin: 25px;
+    text-align: center;
+}
+
+.addsitehere p{
+    color: white;
+}
+
+.searchbarsite{
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: #7c7c7c2b;
+    color: white;
+    height : 55px;
+    max-width: 300px;
+    padding: 0 10px;
+    width: 100%;
+    font-family: inherit;
+    font-size: 120%;
+    text-align: center;
+}
+
+.searchbar {
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: #7c7c7c2b;
+    color: white;
+    height : 55px;
+    max-width: 400px;
+    padding: 0 10px;
+    width: 100%;
+    font-family: inherit;
+    font-size: 120%;
+    text-align: center;
+}
+
+.addbutton {
+    margin: 25px 0;
+    border: none;
+    border-radius: 10px;
+    outline: 1px;
+    outline-color: white;
+    background-color: #7c7c7c2b;
+    color: white;
+    height: 55px;
+    padding: 10px 20px;
+    font-family: inherit;
+    font-size: 110%;
+    text-align: center;
+}
+
+.addbutton:hover{
+    background: black;
+    margin: 2px solid white;
+}
+
+.inputbottom{
+    padding: 10px 220px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 100px;
+}
+
+.inputbottom button{
+    margin: 10px;
+}
+
+#Savebutton{
+    background-color: blue;
+}
+
+#Savebutton:hover{
+    background-color: darkblue;
+}
+
+#nodata{
+    margin: 150px;
+}
