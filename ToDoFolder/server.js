@@ -14,35 +14,29 @@ app.use(express.json());
 app.use(express.urlencoded({ extended : false}));
 
 
-app.get('/get', (req, response) => {
+app.get('/insert', (req, res) => {
+    const db = Database.getDbServiceInstance();
+
+    const result = db.getData();
+    console.log("request.body");
+});
+
+
+app.get('/get', (req, res) => {
     const db = Database.getDbServiceInstance();
 
     const result = db.getData();
     
     result
-    .then(data => response.json({data : data}))
+    .then(data => res.json({data : data}))
     .catch(err => console.log(err));
 });
 
-// app.get("/get", (req, res) => {
-//     const  db = Database.getDatabaseInstance();
-    
-//     const result = db.getAllData();
 
-//     result.then( data => response.json(
-//         {data: data}
-//     ))
-//     .catch(err => console.log(err));
-
-// });
-
-// app.get("/geto", (req, res) => {
-//     res.send(total);
-// });
 
 
 const PORT = process.env.PORT;
 
-app.listen(PORT, () => 
+app.listen(PORT, () =>
     console.log(`the app is running on ${PORT}`)
     );
